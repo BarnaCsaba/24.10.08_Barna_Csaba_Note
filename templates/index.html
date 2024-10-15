@@ -63,5 +63,13 @@
         <button type="submit" value="Submit">Submit</button>
       </form>
 
+
+    {% if products_ %}
+      <h2>Beküldött adat:</h2>
+      {% for product in products_ %}
+        {{ product }}
+      {% endfor %}
+    {% endif %}
+
 </body>
 </html>
