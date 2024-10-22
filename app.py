@@ -19,7 +19,27 @@ def submit_products():
 def get_products():
     return render_template("products.html", products_=products)
 
+@app.route('/signup_form', methods=['POST','GET'])
+def signup():
+    if request method == 'POST':
+        user_data = (
+            'fullname': request.form.get('fullname'),
+            'email': request.form.get('email'),
+            'password': request.form.get('password'),
+            'telephone': request.form.get('telephone'),
+            'gender': request.form.get('gender'),
+            'color': request.form.get('color'),
+            'profile_pic': request.form.get('profile_pic'),
+            'birth date': request.form.get('birth date'),
+            'actual time': request.form.get('actual time'),
+            'interests': request.form.get('interests'),
+        )
+        users.append(user_data)
+    return render_template("signup_form.html")
 
+@app.route('/admin')
+def admin():
+    return render_template('admin.html', users=users)
 
 if __name__ == "__main__":
     app.run(debug=True)
